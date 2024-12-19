@@ -6,20 +6,20 @@ const lettersAndNumbers = [...letters, ...numbers]
 const lettersAndSymbols = [...letters, ...symbols]
 const allTypes = [...letters, ...numbers, ...symbols]
 
-const length = document.querySelector("#length")
-const value = document.querySelector("#value")
-value.textContent = length.value
-length.addEventListener("input", (event) => {
-  value.textContent = event.target.value
+const lengthSlider = document.getElementById("length-slider")
+const lengthValue = document.getElementById("length-value")
+
+lengthValue.textContent = lengthSlider.value
+lengthSlider.addEventListener("input", (event) => {
+    lengthValue.textContent = event.target.value
 })
 
-const passwordOneBox = document.getElementById("boxOne")
-const passwordTwoBox = document.getElementById("boxTwo")
-
+const passwordOneDisplay = document.getElementById("password1")
+const passwordTwoDisplay = document.getElementById("password2")
 
 function generatePasswords() {
-    const numbersCheckbox = document.getElementById("numbersCheckbox")
-    const symbolsCheckbox = document.getElementById("symbolsCheckbox")
+    const numbersCheckbox = document.getElementById("include-numbers")
+    const symbolsCheckbox = document.getElementById("include-symbols")
 
     let passwordOne = ""
     let passwordTwo = ""
@@ -35,12 +35,12 @@ function generatePasswords() {
         type = letters
     }
 
-    for (let i = 0; i < length.value; i++) {
-        let randomNumberOne = Math.floor(Math.random() * type.length)
-        let randomNumberTwo = Math.floor(Math.random() * type.length)
+    for (let i = 0; i < lengthValue.value; i++) {
+        const randomNumberOne = Math.floor(Math.random() * type.length)
+        const randomNumberTwo = Math.floor(Math.random() * type.length)
         passwordOne += type[randomNumberOne]
         passwordTwo += type[randomNumberTwo]
     }
-    passwordOneBox.textContent = passwordOne
-    passwordTwoBox.textContent = passwordTwo
+    passwordOneDisplay.textContent = passwordOne
+    passwordTwoDisplay.textContent = passwordTwo
 }

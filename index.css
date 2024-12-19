@@ -1,9 +1,9 @@
-body, h1, p, label, input {
+body, h1, h2, p, label, input {
     margin: 0;
     background: #1F2937
 }
 
-h1 {
+.header {
     margin: 60px 36px 0;
     font-family: "Karla", sans-serif;
     font-size: 40px;
@@ -16,8 +16,8 @@ h1 {
     color: #10B981;
 }
 
-p {
-    margin: 10px 36px 51px;
+h2, p {
+    margin: 10px 36px 36px;
     font-family: "Inter", sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -37,7 +37,7 @@ button {
     cursor: pointer;
 }
 
-#toggle {
+.password-options {
     margin: 0 36px;
     font-family: "Inter", sans-serif;
     font-size: 16px;
@@ -45,7 +45,7 @@ button {
     color: white;
 }
 
-#length {
+#length-slider {
     margin-bottom: 10px;
 }
 
@@ -54,7 +54,7 @@ hr {
     border: 1px solid #2F3E53;
 }
 
-.container {
+.output-container {
     display: flex;
     flex-direction: row;
     justify-content: start;
@@ -62,7 +62,7 @@ hr {
     margin: 35px 36px;
 }
 
-.box {
+.display {
     width: 280px;
     height: 39px;
     background: #273549;
@@ -70,7 +70,7 @@ hr {
     border-radius: 6px;
 }
 
-.text {
+.output-text {
     background-color: #273549;
     font-family: "Inter", sans-serif;
     font-size: 16px;
